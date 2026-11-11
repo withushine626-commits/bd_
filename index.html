@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>November 14 | My Love ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: Georgia, serif;
+  color: white;
+  background: linear-gradient(145deg,#160d27,#48203e,#8e456a);
+  text-align: center;
+}
+
+#balloons, #hearts, #confetti {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -130px;
+  width: 43px;
+  height: 55px;
+  border-radius: 50% 50% 45% 45%;
+  animation: floatUp linear infinite;
+  opacity: .85;
+  box-shadow: inset -7px -5px 10px #0003;
+}
+
+.balloon::before {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 17px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid currentColor;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  top: 54px;
+  left: 21px;
+  height: 65px;
+  border-left: 1px solid #ffffff90;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0) rotate(-8deg); }
+  to { transform: translateY(-125vh) rotate(12deg); }
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #ffb3d1;
+  animation: heartUp linear infinite;
+}
+
+@keyframes heartUp {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 17px;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 35px 23px;
+  border: 1px solid #ffffff55;
+  border-radius: 28px;
+  background: #ffffff13;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 50px #0005;
+}
+
+.small {
+  color: #ffc7df;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+h1 {
+  margin: 18px 0;
+  font-size: clamp(34px, 10vw, 48px);
+  color: #ffd6e7;
+  text-shadow: 0 0 20px #ff80b5;
+}
+
+.cake {
+  font-size: 75px;
+  margin: 15px 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-12px); }
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #ffe5f0;
+}
+
+.date {
+  margin: 22px 0;
+  font-size: 23px;
+  color: #ffbfd9;
+  letter-spacing: 3px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.time {
+  min-width: 65px;
+  padding: 12px 5px;
+  border-radius: 13px;
+  background: #ffffff20;
+}
+
+.time strong {
+  display: block;
+  font-size: 23px;
+  color: #ffd2e4;
+}
+
+.time span {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  margin: 9px 4px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #672b4b;
+  background: linear-gradient(135deg,#ffd7e8,#ff9fc7);
+  cursor: pointer;
+  box-shadow: 0 5px 20px #ff9fc755;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+#letter {
+  display: none;
+  margin-top: 25px;
+  padding: 22px 16px;
+  background: #ffffff17;
+  border-radius: 18px;
+  animation: appear 1s ease;
+}
+
+#letter h2 {
+  color: #ffd2e4;
+  margin-bottom: 15px;
+}
+
+#letter p {
+  font-size: 15px;
+  line-height: 2;
+  color: #fff0f6;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #ffd3e6;
+  letter-spacing: 2px;
+}
+
+.confetti {
+  position: absolute;
+  width: 9px;
+  height: 13px;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="balloons"></div>
+<div id="hearts"></div>
+<div id="confetti"></div>
+
+<div class="container">
+  <main class="card">
+
+    <div class="small">A SPECIAL DAY FOR SOMEONE SPECIAL</div>
+
+    <div class="cake">🎂</div>
+
+    <h1>Happy Birthday!</h1>
+
+    <p class="subtitle">
+      To the most beautiful girl in my world.<br>
+      Today is all about YOU. ❤️
+    </p>
+
+    <div class="date">NOVEMBER 14</div>
+
+    <p class="subtitle">Your special day is coming...</p>
+
+    <div class="countdown">
+      <div class="time">
+        <strong id="days">00</strong>
+        <span>DAYS</span>
+      </div>
+      <div class="time">
+        <strong id="hours">00</strong>
+        <span>HOURS</span>
+      </div>
+      <div class="time">
+        <strong id="minutes">00</strong>
+        <span>MINUTES</span>
+      </div>
+      <div class="time">
+        <strong id="seconds">00</strong>
+        <span>SECONDS</span>
+      </div>
+    </div>
+
+    <button onclick="openLetter()">
+      Open Your Surprise 💌
+    </button>
+
+    <button onclick="celebrate()">
+      Make a Wish ✨
+    </button>
+
+    <div id="letter">
+      <h2>To My Love ❤️</h2>
+
+      <p>
+        Happy Birthday, my love! 🥺❤️
+        <br><br>
+        I wish I could be beside you today,
+        holding your hands and seeing your beautiful smile.
+        Even if distance keeps us apart,
+        you will always have a special place in my heart.
+        <br><br>
+        May every dream you have come true.
+        May your days be filled with happiness,
+        your heart with peace,
+        and your life with endless love.
+        <br><br>
+        Thank you for being you.
+        I am so lucky to have you in my life.
+        <br><br>
+        I LOVE YOU, ALWAYS. 💗
+      </p>
+    </div>
+
+    <footer>
+      MADE WITH ENDLESS LOVE ❤️
+      <br><br>
+      NOVEMBER 14
+    </footer>
+
+  </main>
+</div>
+
+<script>
+
+// Create lots of balloons
+const colors = [
+  "#ff7eb6","#ffb347","#a78bfa",
+  "#ff5e78","#75d9ff","#f7a8d8",
+  "#ffd166","#b8f2e6","#ffffff"
+];
+
+const balloonBox = document.getElementById("balloons");
+
+for (let i = 0; i < 45; i++) {
+  const b = document.createElement("div");
+  b.className = "balloon";
+  b.style.left = Math.random() * 100 + "%";
+  b.style.background = colors[i % colors.length];
+  b.style.color = colors[i % colors.length];
+  b.style.animationDuration = (8 + Math.random() * 12) + "s";
+  b.style.animationDelay = (-Math.random() * 18) + "s";
+  b.style.transform = `scale(${0.6 + Math.random() * 0.7})`;
+  balloonBox.appendChild(b);
+}
+
+// Floating hearts
+const heartBox = document.getElementById("hearts");
+
+for (let i = 0; i < 25; i++) {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerHTML = "♥";
+  h.style.left = Math.random() * 100 + "%";
+  h.style.fontSize = (12 + Math.random() * 22) + "px";
+  h.style.animationDuration = (6 + Math.random() * 9) + "s";
+  h.style.animationDelay = (-Math.random() * 12) + "s";
+  heartBox.appendChild(h);
+}
+
+// Birthday countdown
+function updateCountdown() {
+  const birthday = new Date("2026-11-14T00:00:00").getTime();
+  const now = new Date().getTime();
+  const distance = birthday - now;
+
+  if (distance <= 0) {
+    document.querySelector(".subtitle").innerHTML =
+      "IT'S YOUR SPECIAL DAY! HAPPY BIRTHDAY! ❤️🎂";
+
+    ["days","hours","minutes","seconds"].forEach(id => {
+      document.getElementById(id).innerText = "00";
+    });
+    return;
+  }
+
+  document.getElementById("days").innerText =
+    Math.floor(distance / 86400000);
+
+  document.getElementById("hours").innerText =
+    Math.floor((distance % 86400000) / 3600000);
+
+  document.getElementById("minutes").innerText =
+    Math.floor((distance % 3600000) / 60000);
+
+  document.getElementById("seconds").innerText =
+    Math.floor((distance % 60000) / 1000);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Open love letter
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+  document.getElementById("letter").scrollIntoView({
+    behavior: "smooth",
+    block: "nearest"
+  });
+  celebrate();
+}
+
+// Confetti animation
+function celebrate() {
+  const box = document.getElementById("confetti");
+
+  for (let i = 0; i < 100; i++) {
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "%";
+    c.style.top = "-20px";
+    c.style.background = colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDuration = (2 + Math.random()*3) + "s";
+    box.appendChild(c);
+
+    setTimeout(() => c.remove(), 5000);
+  }
+}
+
+</script>
+</body>
+</html>
